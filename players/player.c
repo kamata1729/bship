@@ -14,6 +14,7 @@ const int len_b = 4;
 int root_x, root_y;
 int rooting = -1;//1 = true, -1 = false;
 int root_count = 0;
+int pre_ship_len = 0;
 enum ship {
   UNKNOWN,
   ROCK,
@@ -111,8 +112,12 @@ int *get_unknown_around(int x, int y){
   if(y+1<=8){
     if(enemy_board[x][y+1] == UNKNOWN){rooting=1;unknown[0]=x;unknown[1]=y+1;return unknown;}
   }
-  quit_root();
-  unknown[0]=-1; unknown[1]=-1;
+  if(pre_ship_len>0&&root_count < pre_ship_len){
+    //戻って探す処理
+  }else{
+    quit_root();
+    unknown[0]=-1; unknown[1]=-1;
+  }
   return unknown;
 } 
 
@@ -161,6 +166,7 @@ void record_result(int x,int y,char line[])
       root_count ++;
       if(root_count >= len_b){quit_root();}
     }
+    pre_ship_len = len_b;
   }
   else if(line[13]=='C')
   {
@@ -172,6 +178,7 @@ void record_result(int x,int y,char line[])
       root_count ++;
       if(root_count >= len_c){quit_root();}
     }
+    pre_ship_len = len_c;
     //====kokomade====
   }
   else if(line[13]=='D')
@@ -184,6 +191,7 @@ void record_result(int x,int y,char line[])
       root_count ++;
       if(root_count >= len_d){quit_root();}
     }
+    pre_ship_len = len_d;
     //====kokomade====
   }
   else if(line[13]=='S')
@@ -196,6 +204,7 @@ void record_result(int x,int y,char line[])
     if(y+1>=0){enemy_board[x][y+1] = NOSHIP;}
     set_noship_cross(x,y);
     //====kokomade====
+    pre_ship_len = len_s;
   }
   else if(line[13]=='R')
   {
@@ -203,12 +212,14 @@ void record_result(int x,int y,char line[])
     enemy_board[x][y] = ROCK;
     
     //====kokomade====
+    pre_ship_len = 0;
   }
   else
   {
     //====kokokara====
     enemy_board[x][y] = NOSHIP;
     //====kokomade====
+    pre_ship_len = 0;
   }
 }
 
