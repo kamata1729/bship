@@ -4,6 +4,7 @@
 #include <client-side.h>
 #include <redundant.h>
 #include <public.h>
+#include <time.h>
 
 const char myName[] = "ex2";
 const char deployment[] = "Ba3a4a5a6 Cc1c2c3 Cc5c6c7 De1e2 De4e5 De7e8 Sg1 Sg3 Sg5 Sg7 ";
@@ -30,7 +31,8 @@ void respond_with_shot(void)
   int x, y;
 
   //=====kokokara========
-
+  x = rand()%BD_SIZE;
+  y = rand()%BD_SIZE;
 
   //=====kokomade========
 
@@ -78,6 +80,7 @@ void handle_messages(void)
 
 int main()
 {
+  srand((unsigned int) time(NULL));
   client_make_connection();
   handle_messages();
   client_close_connection();

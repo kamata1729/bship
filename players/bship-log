@@ -1,2 +1,20 @@
 winner = sweep, loser = random, rule = hit-all, reason = sunk all in 76 rounds, winner probably = ??
 winner = draw, loser = draw, rule = hit-all, reason = draw
+winner = draw, loser = draw, rule = hit-all, reason = draw
+winner = ex3, loser = ex2, rule = hit-all, reason = sunk all in 76 rounds, winner probably = ??
+winner = ex3, loser = ex2, rule = hit-all, reason = sunk all in 76 rounds, winner probably = ??
+winner = ex4, loser = ex2, rule = hit-all, reason = sunk all in 68 rounds, winner probably = ??
+winner = draw, loser = draw, rule = hit-all, reason = draw
+winner = ex3, loser = ex2, rule = hit-all, reason = sunk all in 76 rounds, winner probably = ??
+winner = draw, loser = draw, rule = hit-all, reason = draw
+winner = 2959304354, loser = ex5, rule = hit-all, reason = sunk all in 79 rounds, winner probably = ??
+winner = kimura, loser = 2959304354, rule = hit-all, reason = sunk all in 31 rounds, winner probably = ??
+winner = draw, loser = draw, rule = hit-all, reason = draw
+winner = 2959304354, loser = ex5, rule = hit-all, reason = sunk all in 40 rounds, winner probably = ??
+winner = 2959304354, loser = ex5, rule = hit-all, reason = sunk all in 39 rounds, winner probably = ??
+winner = 2959304354, loser = inaba, rule = hit-all, reason = sunk all in 43 rounds, winner probably = ??
+winner = inaba, loser = 2959304354, rule = hit-all, reason = sunk all in 35 rounds, winner probably = ??
+winner = inaba, loser = 2959304354, rule = hit-all, reason = sunk all in 35 rounds, winner probably = ??
+winner = inaba, loser = 2959304354, rule = hit-all, reason = sunk all in 38 rounds, winner probably = ??
+winner = inaba, loser = 2959304354, rule = hit-all, reason = sunk all in 37 rounds, winner probably = ??
+winner = 2959304354, loser = inaba, rule = hit-all, reason = sunk all in 39 rounds, winner probably = ??

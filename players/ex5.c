@@ -37,12 +37,39 @@ void respond_with_deployment(void)
   free(str);
 }
 
-
 void init_board(void)
 {
   //======kokokara======
+  int ix, iy;
 
+  for(ix = 0; ix < (BD_SIZE); ix++)
+  {
+    for(iy = 0; iy < (BD_SIZE); iy++)
+    {
+      //======kokokara======
+	enemy_board[ix][iy] = UNKNOWN;
 
+      //======kokomade======
+    }
+  }
+
+  //rock is out of bound
+
+  enemy_board[0][0] = ROCK;
+
+  //======kokokara======
+  enemy_board[0][1] = ROCK;
+  enemy_board[0][1] = ROCK;
+  enemy_board[1][0] = ROCK;
+  enemy_board[8][8] = ROCK;
+  enemy_board[8][7] = ROCK;
+  enemy_board[7][8] = ROCK;
+  enemy_board[0][8] = ROCK;
+  enemy_board[0][7] = ROCK;
+  enemy_board[1][8] = ROCK;
+  enemy_board[8][0] = ROCK;
+  enemy_board[8][1] = ROCK;
+  enemy_board[7][0] = ROCK;
   //======kokomade======
 }
 
@@ -56,8 +83,10 @@ void respond_with_shot(void)
     x = rand() % BD_SIZE;
     y = rand() % BD_SIZE;
     //=====kokokara=====
-
-
+    if((enemy_board[x][y] != ROCK) && (enemy_board[x][y] != NOSHIP))
+    { 
+      break; 
+    }
     //=====kokomade=====
   }
   printf("[%s] shooting at %d%d ... ", myName, x, y);
@@ -72,42 +101,48 @@ void record_result(int x,int y,char line[])
   if(line[13]=='B')
   {
     //====kokokara====
-
-
+    enemy_board[x][y] = BSHIP;
     //====kokomade====
   }
   else if(line[13]=='C')
   {
     //====kokokara====
-
+     enemy_board[x][y] = CSHIP;
 
     //====kokomade====
   }
   else if(line[13]=='D')
   {
     //====kokokara====
-
+     enemy_board[x][y] = DSHIP;
 
     //====kokomade====
   }
   else if(line[13]=='S')
   {
     //====kokokara====
-
-
+    enemy_board[x][y] = SSHIP;
+    if(x-1>=0){enemy_board[x-1][y] = NOSHIP;}
+    if(x+1>=0){enemy_board[x+1][y] = NOSHIP;}
+    if(y-1>=0){enemy_board[x][y-1] = NOSHIP;}
+    if(y+1>=0){enemy_board[x][y+1] = NOSHIP;}
+    if(x-1>=0 && y-1>=0){enemy_board[x-1][y-1] = NOSHIP;}
+    if(x-1>=0 && y+1<=8){enemy_board[x-1][y+1] = NOSHIP;}
+    if(x+1<=8 && y-1>=0){enemy_board[x+1][y-1] = NOSHIP;}
+    if(x+1<=8 && y+1<=8){enemy_board[x+1][y+1] = NOSHIP;}
     //====kokomade====
   }
   else if(line[13]=='R')
   {
     //====kokokara====
-
+    enemy_board[x][y] = ROCK;
 
     //====kokomade====
   }
   else
   {
     //====kokokara====
-
+    enemy_board[x][y] = UNKNOWN;
 
     //====kokomade====
   }

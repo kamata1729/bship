@@ -6,7 +6,7 @@
 #include <public.h>
 
 const char myName[] = "ex1";
-const char deployment[] = "Ba3a4a5a6 Cc1c2c3 Cc5c6c7 De1e2 De4e5 De7e8 Sg1 Sg3 Sg5 Sg7 ";
+const char deployment[] = "Ba3a4a5a6 Cc1c2c3 Cc6c7c8 De1e2 De4e5 De7e8 Sg1 Sg3 Sg5 Sg7 ";
 
 void respond_with_name(void)
 {

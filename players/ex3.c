@@ -7,6 +7,7 @@
 
 const char myName[] = "ex3";
 const char deployment[] = "Ba3a4a5a6 Cc1c2c3 Cc5c6c7 De1e2 De4e5 De7e8 Sg1 Sg3 Sg5 Sg7 ";
+int battle_count;
 
 int pre_shot_x, pre_shot_y;
 
@@ -30,10 +31,10 @@ void respond_with_shot(void)
 {
   char shot_string[MSG_LEN];
   int x, y;
-
   //=====kokokara========
-
-
+  x = battle_count % 9;
+  y = battle_count / 9;
+  battle_count++;
   //=====kokomade========
 
   printf("[%s] shooting at %d%d ... ", myName, x, y);
