@@ -2,5 +2,5 @@
 sleep 1
 ./player &
 sleep 1
-../sample/ta_inaba &
+../sample/ta_kimura2 &
 
